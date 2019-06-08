@@ -2,57 +2,57 @@
 <html>
 
 <head>
-    <title>SHOP</title>
-    <link rel="stylesheet" href="css/uikit.min.css">
+	<title>SHOP</title>
+	<link rel="stylesheet" href="css/uikit.min.css">
 </head>
 
 <body>
-    <div class="uk-container uk-margin-large-top" id="sample" v-on:input="filterCars()">
-        <nav class="uk-navbar-container" uk-navbar>
-            <div class="uk-navbar-left">
-                <a href="" class="uk-navbar-item uk-logo">SHOP</a>
-                <ul class="uk-navbar-nav">
-                    <li><a href="">Главная</a></li>
-                    <li><a href="">Каталог</a></li>
-                    <li><a href="">О компании</a></li>
-                </ul>
-            </div>
-            <div class="uk-navbar-right uk-margin-small-right">
-                <span uk-icon="icon: cart; ratio: 2"></span>
-            </div>
-        </nav>
-        <div class="uk-flex uk-margin-top">
-            <input class="uk-input" placeholder="Поиск товаров..." v-model="search">
+	<div class="uk-container uk-margin-large-top" id="sample" v-on:input="filterCars()">
+		<nav class="uk-navbar-container" uk-navbar>
+			<div class="uk-navbar-left">
+				<a href="" class="uk-navbar-item uk-logo">SHOP</a>
+				<ul class="uk-navbar-nav">
+					<li><a href="">Главная</a></li>
+					<li><a href="">Каталог</a></li>
+					<li><a href="">О компании</a></li>
+				</ul>
+			</div>
+			<div class="uk-navbar-right uk-margin-small-right">
+				<span uk-icon="icon: cart; ratio: 2"></span>
+			</div>
+		</nav>
+		<div class="uk-flex uk-margin-top">
+			<input class="uk-input" placeholder="Поиск товаров..." v-model="search">
 
-        </div>
+		</div>
 
-        <div class="uk-margin-remove" uk-grid>
-            <div class="uk-card uk-card-default uk-card-body uk-width-1-4">
-                <div class="uk-text-bold">Цена</div>
-                <div class="uk-flex">
-                    <input class="uk-input uk-margin-small-right" data-price="priceFrom" placeholder="Цена от..." v-on:input.number="priceReformat($event)">
-                    <input class="uk-input" placeholder="Цена до..." data-price="priceTo" v-on:input="priceReformat($event)">
-                </div>
-                <div class="uk-margin-top uk-text-bold">Бренды</div>
-                <div class="uk-flex uk-flex-column" v-on:change="filterCars()">
-                    <label><input class="uk-checkbox" type="checkbox" value="BMW" v-model="brands"> BMW</label>
-                    <label><input class="uk-checkbox" type="checkbox" value="Mercedes" v-model="brands"> Mercedes</label>
-                    <label><input class="uk-checkbox" type="checkbox" value="Bentley" v-model="brands"> Bentley</label>
-                    <label><input class="uk-checkbox" type="checkbox" value="AUDI" v-model="brands"> AUDI</label>
+		<div class="uk-margin-remove" uk-grid>
+			<div class="uk-card uk-card-default uk-card-body uk-width-1-4">
+				<div class="uk-text-bold">Цена</div>
+				<div class="uk-flex" v-on:input="priceReformat($event)">
+					<input class="uk-input uk-margin-small-right" placeholder="Цена от..." data-price="priceFrom">
+					<input class="uk-input" placeholder="Цена до..." data-price="priceTo">
+				</div>
+				<div class="uk-margin-top uk-text-bold">Бренды</div>
+				<div class="uk-flex uk-flex-column" v-on:change="filterCars()">
+					<label><input class="uk-checkbox" type="checkbox" value="BMW" v-model="brands"> BMW</label>
+					<label><input class="uk-checkbox" type="checkbox" value="Mercedes" v-model="brands"> Mercedes</label>
+					<label><input class="uk-checkbox" type="checkbox" value="Bentley" v-model="brands"> Bentley</label>
+					<label><input class="uk-checkbox" type="checkbox" value="AUDI" v-model="brands"> AUDI</label>
 
-                </div>
-            </div>
-            <div class="uk-card uk-card-default uk-card-body uk-width-3-4 uk-margin-remove" uk-grid>
-                <card v-for="car in cars" :item="car">
-                </card>
+				</div>
+			</div>
+			<div class="uk-card uk-card-default uk-card-body uk-width-3-4 uk-margin-remove" uk-grid>
+				<card v-for="car in cars" :item="car">
+				</card>
 
-            </div>
-        </div>
-    </div>
-    <script src="js/uikit.min.js"></script>
-    <script src="js/uikit-icons.min.js"></script>
-    <script src="js/vue.min.js"></script>
-    <script src="js/script.js"></script>
+			</div>
+		</div>
+	</div>
+	<script src="js/uikit.min.js"></script>
+	<script src="js/uikit-icons.min.js"></script>
+	<script src="js/vue.min.js"></script>
+	<script src="js/script.js"></script>
 </body>
 
 </html>
